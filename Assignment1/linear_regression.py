@@ -2,7 +2,7 @@ import numpy as np
 
 class LinearRegression():
     
-    def __init__(self, learning_rate=0.001, epochs=10000):
+    def __init__(self, learning_rate, epochs):
         """
         Assign hyperparameters and initialize weights, bias
         and loss array
