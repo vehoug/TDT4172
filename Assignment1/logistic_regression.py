@@ -16,13 +16,13 @@ class LogisticRegression():
         self.weights, self.bias = None, None
         self.losses, self.train_accuracies = [], []
 
-    """
-    Computes the sigmoid activation function
-
-    Args:
-        z (array<m>): a vector of floats
-    """
     def sigmoid(self, z):
+        """
+        Computes the sigmoid activation function
+
+        Args:
+            z (array<m>): a vector of floats
+        """
         return 1 / (1 + np.exp(-z))
 
     def _compute_loss(self, y, y_pred):
@@ -114,3 +114,18 @@ class LogisticRegression():
         lin_model = np.dot(X, self.weights) + self.bias
         y_pred = self.sigmoid(lin_model)
         return (y_pred > 0.5).astype(int)
+    
+    def predict_proba(self, X):
+        """
+        Generates probability predictions without classification
+        
+        Args:
+            X (array<m,n>): a matrix of floats with 
+                m rows (#samples) and n columns (#features)
+        
+        Returns:
+            A length m array of floats in the range [0, 1]
+        """
+        
+        lin_model = np.dot(X, self.weights) + self.bias
+        return self.sigmoid(lin_model)
