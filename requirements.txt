@@ -3,3 +3,5 @@ numpy
 matplotlib
 ipykernel
 scikit-learn
+catboost
+shap
