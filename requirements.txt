@@ -5,3 +5,8 @@ ipykernel
 scikit-learn
 catboost
 shap
+keras
+tensorflow
+pytorch
+pydot
+tabulate
